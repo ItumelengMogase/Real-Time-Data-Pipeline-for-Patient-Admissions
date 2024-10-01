@@ -10,18 +10,19 @@ This project sets up a **real-time data ingestion pipeline** for patient admissi
 - Orchestrate tasks and monitor the pipeline using Dagster.
 - Visualise the data trends with PowerBI.
 
+---
+
 ## Project Structure
 
 ```plaintext
 Real-Time-Data-Pipeline-for-Patient-Admissions/
 │
-├── dags/                    # Airflow DAGs for orchestration
+├── dags/                    # Airflow DAGs for orchestration (if using Airflow)
 ├── scripts/                 # Python scripts for Kafka producer, Spark jobs
 │   ├── kafka_producer.py    # Simulates patient admissions to Kafka
 │   ├── spark_streaming.py   # Spark streaming job for processing Kafka events
 │   └── db_setup.sql         # SQL script for PostgreSQL table creation
-├── docker-compose.yml       # Docker Compose for Kafka, PostgreSQL, Airflow
-├── requirements.txt         # Python dependencies (Dagster, Airflow, etc.)
+├── docker-compose.yml       # Docker Compose for Kafka, PostgreSQL
+├── requirements.txt         # Python dependencies (Dagster, PySpark, etc.)
 ├── powerbi_dashboard.pbit   # PowerBI file for data visualisation
 └── README.md                # Documentation for GitHub
-
