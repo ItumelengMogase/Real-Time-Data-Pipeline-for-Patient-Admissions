@@ -1,0 +1,13 @@
+FROM python:3.10-slim
+
+# Set the working directory
+WORKDIR /opt/dagster/app
+
+# Install dependencies
+RUN pip install dagster dagster-postgres dagster-aws
+
+# Copy the repo.py file into the container
+COPY repo.py /opt/dagster/app/
+
+# Command to run the application
+CMD ["python", "repo.py"]
