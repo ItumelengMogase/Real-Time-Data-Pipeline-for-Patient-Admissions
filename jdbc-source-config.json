@@ -1,0 +1,16 @@
+{
+  "name": "jdbc-source-patient-admissions",
+  "config": {
+      "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+      "tasks.max": "1",
+      "connection.url": "jdbc:postgresql://postgresql:5432/healthcare_pipeline_db",
+      "connection.user": "itumeleng",
+      "connection.password": "libra",
+      "table.whitelist": "medical_data.AdmissionsCorePopulatedTable, medical_data.admissionsdiagnosescorepopulatedtable, medical_data.labscorepopulatedtable, medical_data.patientcorepopulatedtable",
+      "mode": "incrementing",
+      "incrementing.column.name": "admission_id",
+      "topic.prefix": "postgres-",
+      "poll.interval.ms": "5000",
+      "schema.pattern": "medical_data"
+  }
+}
